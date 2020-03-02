@@ -1,0 +1,57 @@
+{
+  "name": "@teclone/xhr",
+  "version": "0.0.0-development",
+  "description": "Exports list of industry categories, reusable for web project implementation",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "build/index",
+  "typings": "build/index",
+  "module": "build/esm/index",
+  "author": "Harrison Ifeanyichukwu <harrisonifeanyichukwu@gmail.com> (https://github.com/teclone)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teclone/xhr.git"
+  },
+  "scripts": {
+    "commit": "git-cz",
+    "test": "BABEL_ENV=test jest",
+    "watch-test": "BABEL_ENV=test jest --watch",
+    "typings": "tsc --p ./tsconfig.build.json",
+    "build": "rimraf lib && yarn typings --declarationDir ./build && yarn typings --declarationDir ./build/esm && rollup-all",
+    "report-coverage": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.5",
+    "@babel/node": "7.4.5",
+    "@babel/plugin-proposal-class-properties": "7.4.4",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "7.4.4",
+    "@babel/plugin-proposal-optional-chaining": "7.8.3",
+    "@babel/preset-env": "7.4.5",
+    "@babel/preset-typescript": "7.3.3",
+    "@teclone/r-server": "2.10.3",
+    "@teclone/rollup-all": "1.10.9",
+    "@types/jest": "24.0.11",
+    "@typescript-eslint/eslint-plugin": "1.6.0",
+    "@typescript-eslint/parser": "1.6.0",
+    "babel-jest": "24.3.1",
+    "commitizen": "3.1.1",
+    "cz-conventional-changelog": "2.1.0",
+    "jest": "24.8.0",
+    "rimraf": "2.6.2",
+    "semantic-release": "^17.0.4",
+    "semantic-release-cli": "5.2.1",
+    "typescript": "3.8.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@teclone/utils": "2.15.0"
+  }
+}
